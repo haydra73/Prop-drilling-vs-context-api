@@ -1,21 +1,19 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useContext } from "react";
+import { TodosContext } from "../../context/todos-context";
 import Todo from "../../models/todo";
 import TodoItem from "../TodoItem";
 
-interface containerProps {
-  children?: ReactNode;
-  items: Todo[];
-  onRemoveToDo: (id: string) => void;
-}
+const Todos: React.FC = (props) => {
 
-const Todos: React.FC<containerProps> = (props) => {
+  const todoCtx= useContext(TodosContext);
+
   return (
     <ul className="mt-24 mx-auto max-w-4xl h-[60vh]">
-      {props.items.map((item) => (
+      {todoCtx.items.map((item) => (
         <TodoItem
           key={item.id}
           text={item.text}
-          onRemoveToDo={props.onRemoveToDo.bind(null, item.id)}
+          onRemoveToDo={todoCtx.onRemoveToDo.bind(null, item.id)}
         />
       ))}
     </ul>
