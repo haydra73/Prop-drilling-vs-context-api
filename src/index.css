@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Poppins";
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  outline: none;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right bottom, #4e54c8, #8f94fb);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+#root {
+      height: 100vh;
+}
+
+
+
+
